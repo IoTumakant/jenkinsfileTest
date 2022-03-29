@@ -10,7 +10,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-		python TimeLog_file.py
+		sh 'python TimeLog_file.py'
             }
         }
         stage('Deploy') {
