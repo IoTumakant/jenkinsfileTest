@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+	agent {
+		 node {
+			label 'Window_agent'
+		}
+	}
 
     stages {
         stage('Build') {
