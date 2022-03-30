@@ -1,7 +1,7 @@
 pipeline {
 	agent {
 		 node {
-			label 'Window_agent'
+			label 'Built-In Node'
 		}
 	}
 
