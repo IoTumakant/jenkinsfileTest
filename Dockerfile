@@ -8,7 +8,7 @@ RUN apt-get update -y
 
 RUN apt install python
 
-COPY TimeLog_file.py
+COPY TimeLog_file.py /home
 
 
 
