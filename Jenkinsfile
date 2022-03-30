@@ -1,9 +1,9 @@
 pipeline {
 	
 	
-	def buildNumber = BUILD_NUMBER
 	agent {
 		 node {
+			def buildNumber = BUILD_NUMBER
 			label 'MasterNode'
 		}
 	}
