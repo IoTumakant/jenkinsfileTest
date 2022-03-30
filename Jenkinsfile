@@ -6,11 +6,11 @@ pipeline {
 	}
 
     stages {
-        stage('Git Clone') {
-            steps {
-                git 'https://github.com/IoTumakant/jenkinsfileTest.git' , branch: 'master'
+	 stage('Build') {
+		 steps {
 
             }
+	}
         }
         stage('Test') {
             steps {
