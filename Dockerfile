@@ -6,7 +6,9 @@ MAINTAINER umakantkumar@gmail.com
 
 RUN apt-get update
 
-RUN apt install python
+RUN apt-get upgrade -y
+
+RUN apt install python -y
 
 COPY TimeLog_file.py /home
 
