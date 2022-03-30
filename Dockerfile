@@ -4,9 +4,9 @@ LABEL "about"="This file is to create an ubuntu image with python to run a pytho
 
 MAINTAINER umakantkumar@gmail.com
 
-RUN sudo apt-get update -y
+RUN apt-get update
 
-RUN sudo apt install python
+RUN apt install python
 
 COPY TimeLog_file.py /home
 
