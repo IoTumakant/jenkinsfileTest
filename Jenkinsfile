@@ -12,7 +12,7 @@ pipeline {
 		 steps {
 			echo 'Building Docker Image'
 			script {
-				sh 'sudo docker build -t IoTumakant/timelog_py_app -f Dockerfile .'
+				sh 'sudo docker build -t umakant123iot/timelog_py_app -f Dockerfile .'
 			}
 	            }
 	}	
