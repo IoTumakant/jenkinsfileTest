@@ -6,10 +6,13 @@ pipeline {
 	}
 
     stages {
-	 stage('Build') {
+	 stage('Build Docker Image form Docker file') {
 		 steps {
-			echo 'Building.....'
-            }
+			echo 'Building Docker Image'
+			script {
+				sh 'docker build -t timelog_py_app -f Dockerfile .'
+			}
+	            }
 	}	
         stage('Test') {
             steps {
