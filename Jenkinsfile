@@ -6,9 +6,10 @@ pipeline {
 	}
 
     stages {
-        stage('Build') {
+        stage('Git Clone') {
             steps {
-                echo 'Building..'
+                git 'https://github.com/IoTumakant/jenkinsfileTest.git' , branch: 'master'
+
             }
         }
         stage('Test') {
