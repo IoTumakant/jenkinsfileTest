@@ -1,4 +1,7 @@
 pipeline {
+	
+	
+	def buildnumber=BUILD_NUMBER
 	agent {
 		 node {
 			label 'MasterNode'
@@ -10,7 +13,7 @@ pipeline {
 		 steps {
 			echo 'Building Docker Image'
 			script {
-				sh 'docker build -t timelog_py_app -f Dockerfile .'
+				sh 'sudo docker build -t IoTumakant/timelog_py_app:${buildnumber} -f Dockerfile .'
 			}
 	            }
 	}	
