@@ -20,7 +20,9 @@ pipeline {
                  steps {
                         echo 'Pushing Image to Docker Hub'
                         script {
-                                sh 'docker login -u umakant123iot -p 123uk_aecs'
+                                withCredentials([string(credentialsId: 'Docker_Hub_Pass', variable: 'Docker_Hub_Pass')]) {
+					sh 'docker login -u umakant123iot -p ${Docker_Hub_Pass}'
+				}
 				sh 'sudo docker push umakant123iot/timelog_py_app'
                         }
                     }
