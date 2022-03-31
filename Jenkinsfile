@@ -16,7 +16,17 @@ pipeline {
 			}
 	            }
 	}	
-        stage('Test') {
+        stage('Docker Hub login and push image') {
+                 steps {
+                        echo 'Pushing Image to Docker Hub'
+                        script {
+                                sh 'docker login -u umakant123iot -p umakant123iot'
+				sh 'sudo docker push umakant123iot/timelog_py_app'
+                        }
+                    }
+        }
+
+	stage('Test') {
             steps {
                 echo 'Testing..'
 		script {
