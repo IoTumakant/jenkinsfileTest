@@ -41,7 +41,7 @@ pipeline {
                 echo 'Deploying....'
             }
         }
-        stage('Deploy Application as Docker container on Deployment server) {
+        stage('Deploy Application as Docker container on Deployment server') {
                  steps {
                         echo 'Deploying container from Docker hub image'
                         script {
