@@ -27,6 +27,18 @@ pipeline {
                         }
                     }
         }
+	 stage('Application deployment as Docker container on Deployment server') {
+                 steps {
+                        echo 'Deploying Application'
+                        script {
+				sshagent(['Docker_Dev_Server_SSH']) {
+					sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.36.127 docker rm -f timelog_file || true'
+					sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.36.127 docker run -d --name timelog_file umakant123iot/timelog_py_app'
+
+				}     
+                        }
+                    }
+        }
 
 	stage('Test') {
             steps {
