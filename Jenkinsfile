@@ -1,4 +1,4 @@
-pipeline {
+ipeline {
 	
 	
 	agent {
@@ -33,8 +33,8 @@ pipeline {
                         script {
 					sh 'sudo chown jenkins linux123.pem'
 					sh 'sudo chmod 400 linux123.pem'
-					sh 'sudo ssh -o StrictHostKeyChecking=no -i linux123.pem ubuntu@15.206.81.223 docker rm -f timelog_file || true'
-					sh 'sudo ssh -o StrictHostKeyChecking=no -i linux123.pem ubuntu@15.206.81.223 docker run -td --name timelog_file umakant123iot/timelog_py_app' 
+					sh 'sudo ssh -o StrictHostKeyChecking=no -i linux123.pem ubuntu@13.233.149.129 docker rm -f timelog_file || true'
+					sh 'sudo ssh -o StrictHostKeyChecking=no -i linux123.pem ubuntu@13.233.149.129 docker run -d --name timelog_file umakant123iot/timelog_py_app' 
                         }
                     }
         }
